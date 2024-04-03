@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <!-- Define a codificação de caracteres para UTF-8, suportando a maioria dos caracteres e símbolos. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Garante uma boa visualização em dispositivos móveis e ajusta o zoom inicial. -->
+    <title>Cadastro de Computador - Unidade 1</title>
+    <!-- Título da página, que aparece na aba do navegador. -->
+    <style>
+        /* Dicas de CSS inline: para projetos maiores, considere separar o CSS em um arquivo externo. */
+        body {
+            font-family: Arial, sans-serif; /* Define a fonte do texto para uma leitura agradável. */
+            padding: 20px; /* Adiciona um espaçamento interno ao corpo da página. */
+        }
+        form {
+            max-width: 500px; /* Limita a largura máxima do formulário para melhor leitura. */
+            margin: auto; /* Centraliza o formulário na página. */
+        }
+        .form-group {
+            margin-bottom: 15px; /* Espaçamento entre os grupos de formulário. */
+        }
+        .form-group label {
+            display: block; /* Faz o texto do label aparecer acima do campo de input. */
+            margin-bottom: 5px; /* Espaçamento entre o label e o campo de input. */
+        }
+        .form-group input, .form-group select, .form-group date {
+            width: 100%; /* Faz o campo de input ocupar toda a largura disponível. */
+            padding: 8px; /* Adiciona um espaçamento interno ao campo de input para facilitar a leitura. */
+            line-height: 20px; /* Ajusta a altura da linha dentro do campo de input. */
+            border-radius: 4px; /* Adiciona bordas arredondadas aos campos de input. */
+            border: 1px solid #ddd; /* Define a cor e a espessura da borda dos campos de input. */
+            box-sizing: border-box; /* Garante que o padding não aumente o tamanho do campo de input além de 100%. */
+        }
+        button[type="submit"] {
+            cursor: pointer; /* Muda o cursor para indicar que o botão é clicável. */
+            padding: 10px 20px; /* Adiciona espaçamento interno ao botão para torná-lo mais clicável. */
+            background-color: #0056b3; /* Cor de fundo do botão. */
+            color: white; /* Cor do texto do botão. */
+            border: none; /* Remove a borda do botão. */
+            border-radius: 5px; /* Bordas arredondadas para o botão. */
+            margin-top: 10px; /* Espaçamento acima do botão. */
+        }
+        button[type="submit"]:hover {
+            background-color: #003d82; /* Cor de fundo do botão ao passar o mouse. */
+        }
+        table tr:nth-child(even){
+            background-color: blue; /* Dica: Use cores mais suaves para não dificultar a leitura. */
+        }
+        table tr:hover td{
+            background-color: rgb(25, 109, 81); /* Destaca a linha da tabela ao passar o mouse. */
+        }
+    </style>
+</head>
+<body>
+
+<!-- Início do formulário de cadastro de computador -->
+<form>
+    <fieldset>
+        <legend>Cadastro de Computador</legend>
+        <!-- O <fieldset> agrupa elementos relacionados no formulário, e o <legend> fornece um título para o grupo. -->
+        
+        <div class="form-group">
+            <label for="patrimonio">Patrimônio:</label>
+            <!-- O atributo 'for' no <label> associa o label ao campo de input correspondente. -->
+            <input type="number" id="patrimonio" name="patrimonio" required step="1" min="0">
+            <!-- input type="number": Aceita apenas números. 'step' permite valores inteiros. 'required' torna o campo obrigatório. -->
+        </div>
+
+        <!-- Repetição da estrutura do .form-group para outros campos... -->
+
+        <button type="submit">Enviar</button>
+    </fieldset>
+</form>
+<!-- Fim do formulário de cadastro de computador -->
+
+<!-- Separador visual entre os formulários -->
+<br/>
+<hr/>
+
+<!-- Início do formulário de cadastro de sala-->
+<form>
+    <fieldset>
+        <legend>Cadastro de Sala de aula</legend>
+        <!-- Estrutura similar ao formulário anterior, focado agora no cadastro de salas de aula. -->
+
+        <div class="form-group">
+            <label for="numeroSala">Número da Sala:</label>
+            <input type="number" id="numeroSala" name="numeroSala" required step="1" min="0">
+            <!-- Campos específicos para o cadastro de salas de aula. -->
+        </div>
+
+        <div class="form-group">
+            <label for="andar">Andar:</label>
+            <input type="number" id="andar" name="andar" required step="1">
+            <!-- Permite a inserção do número do andar, incluindo valores negativos para subsolos. -->
+        </div>
+
+        <button type="submit">Cadastrar Sala</button>
+        <!-- Botão para enviar o formulário de cadastro de sala. -->
+    </fieldset>
+</form>
+<!-- Fim do formulário de cadastro de sala de aula -->
+
+<hr/>
+
+<h2>Tabelas:</h2>
+<!-- Seção dedicada à exibição de tabelas com os dados cadastrados. -->
+
+<table summary="Tabela para cadastro de computadores" border="1" width="50%" align="center" cellspacing="5" cellpadding="15">
+    <caption>Computadores cadastrados</caption>
+    <!-- A <caption> fornece um título para a tabela. -->
+    <thead>
+        <!-- <thead> agrupa o conteúdo do cabeçalho da tabela. -->
+        <tr>
+            <!-- Cada <tr> define uma linha da tabela. -->
+            <th title="Número do Patrimônio">Patrimônio</th>
+            <!-- <th> define uma célula de cabeçalho. 'title' pode fornecer informações adicionais ao passar o mouse. -->
+            <td>Marca/Modelo</td>
+            <td>Data de aquisição</td>
+            <td>Sistema Operacional</td>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- <tbody> agrupa o conteúdo do corpo da tabela. -->
+        <!-- Espaço reservado para as linhas de dados da tabela. -->
+    </tbody>
+    <tfoot>
+        <!-- <tfoot> agrupa o conteúdo do rodapé da tabela. -->
+        <tr>
+            <td>Total</td>
+            <!-- Exemplo de célula no rodapé da tabela; ajuste conforme necessário. -->
+        </tr>
+    </tfoot>
+</table>
+<!-- Nota: As células de dados devem estar dentro de tags <td>, parece haver um equívoco no cabeçalho, misturando <td> com <th>. -->
+
+</body>
+</html>

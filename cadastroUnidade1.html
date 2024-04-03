@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Computador - Unidade 1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        form {
+            max-width: 500px;
+            margin: auto;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group select, .form-group date {
+            width: 100%;
+            padding: 8px;
+            line-height: 20px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            box-sizing: border-box; 
+        }
+        button[type="submit"] {
+            cursor: pointer;
+            padding: 10px 20px;
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        button[type="submit"]:hover {
+            background-color: #003d82;
+        }
+        table tr:nth-child(even){
+            background-color: blue;
+        }
+        table tr:hover td{
+            background-color: rgb(25, 109, 81);
+        }
+
+        /* Estilo para o formulário de cadastro de sala de aula com borda "desenhada à mão" */
+fieldset {
+  border: 2px solid #000; /* Define a cor e espessura da borda */
+  border-radius: 15px; /* Adiciona curvatura à borda para um look mais suave */
+  padding: 20px;
+  position: relative; /* Necessário para a posição dos pseudo-elementos */
+  margin-bottom: 20px; /* Espaçamento abaixo do formulário */
+}
+
+fieldset::before, fieldset::after {
+  content: ''; /* Conteúdo vazio para os pseudo-elementos */
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  z-index: -1; /* Posiciona os pseudo-elementos abaixo do conteúdo do fieldset */
+}
+
+/* Primeira camada de sombra, mais escura e menos difusa */
+fieldset::before {
+  border: 3px solid rgba(0, 0, 0, 0.7);
+  top: -2px;
+  left: 0;
+  filter: blur(2px); /* Suaviza as bordas da sombra */
+}
+
+/* Segunda camada de sombra, mais clara e mais difusa */
+fieldset::after {
+  border: 3px solid rgba(0, 0, 0, 0.2);
+  top: -4px;
+  left: 0;
+  filter: blur(4px); /* Suaviza ainda mais as bordas da sombra */
+}
+
+/* Ajustes para garantir que o estilo não afete outros elementos fieldset */
+form > fieldset {
+  background: #fff; /* Define a cor de fundo do fieldset */
+  box-shadow: 0px 0px 8px rgba(0,0,0,0.1); /* Adiciona uma sombra suave ao redor do fieldset */
+}
+
+    </style>
+</head>
+<body>
+
+
+<form>
+    <fieldset>
+        <legend>Cadastro de Computador</legend>
+    <div class="form-group">
+        <label for="patrimonio">Patrimônio:</label>
+        <input type="number" id="patrimonio" name="patrimonio" required step="1" min="0">
+    </div>
+    <div class="form-group">
+        <label for="marcaModelo">Marca/Modelo:</label>
+        <input type="text" id="marcaModelo" name="marcaModelo" required>
+    </div>
+    <div class="form-group">
+        <label for="dataAquisicao">Data de Aquisição:</label>
+        <input type="date" id="dataAquisicao" name="dataAquisicao" required>
+    </div>
+    <div class="form-group">
+        <label for="sistemaOperacional">Sistema Operacional:</label>
+        <input type="text" id="sistemaOperacional" name="sistemaOperacional" required>
+    </div>
+    <button type="submit">Enviar</button>
+</fieldset>
+</form>
+
+<br/>
+<hr></hr>
+
+<form>
+    <fieldset> 
+        <legend>Cadastro de Sala de aula</legend> 
+        <div class="form-group">
+            <label for="numeroSala">Número da Sala:</label>
+                <input type="number" id="numeroSala" name="numeroSala" required step="1" min="0">
+            
+        </div>
+
+        <div class="form-group">
+            <label for="andar">Andar:</label>
+            <input type="number" id="andar" name="andar" required step="1">
+        </div>
+        <button type="submit">Cadastrar Sala</button>
+        
+    </fieldset>
+</form>
+
+
+<hr></hr>
+
+<h2>Tabelas:</h2>
+
+<table summary="Tabela para cadastro de computadores" border="1" 
+whidth="50" align="center" cellspacing="5" 
+cellpadding="15">
+<caption>Computadores cadastrados</caption>   
+<thead>
+    <tr>
+        <th title="Número do Patrimônio">Patrimônio</th>
+        <td>Marca/Modelo</td>
+        <td>Data de aquisição</td>
+        <td>Sistema Operacional</td>
+    </tr>
+</thead>
+    <tbody>
+    <tr>
+    <td>
+    </td>
+    </tr>
+    <tr>
+    <td>
+    </td>
+    </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td>Total</td>
+        </tr>
+    </tfoot>
+</table>
+
+</body>
+</html>
